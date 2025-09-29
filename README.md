@@ -1,0 +1,1 @@
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/gh/danlexxx/my-cdn/ghl.css"/>
