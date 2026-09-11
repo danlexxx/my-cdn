@@ -32,6 +32,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body { height: 100%; }
+
 html
 {
 	min-width: 360px;
@@ -450,6 +452,16 @@ ul.list-custom { list-style: square inside url("costom.svg"); /*list-style-image
 	color:#000;
 }
 
+input.atc-input[type="number"],
+input.hide-arrows[type="number"] { 
+	-moz-appearance: textfield; /* to disable increment / decrement default buttons for number input */ 
+}
+input.atc-input[type="number"] { 
+	min-width: 33px;
+	max-width: 100px;
+	padding: 4px 6px;
+}
+
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {  
@@ -538,6 +550,7 @@ ul.list-custom { list-style: square inside url("costom.svg"); /*list-style-image
 	.order-lg-2 { order: 2; }
 	.order-lg-3 { order: 3; }
 	
+	.modal-dialog.modal-xl { max-width: 90%; }
 }
 
 /* // X-Large devices (large desktops, 1200px and up) */
@@ -556,6 +569,7 @@ ul.list-custom { list-style: square inside url("costom.svg"); /*list-style-image
 	.w-xl-100 { width: 100% !important; }
 	.w-xl-auto { width: auto !important; }
 	
+	.modal-dialog.modal-xl { max-width: 1140px; }
 }
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
@@ -675,6 +689,22 @@ ul.list-custom { list-style: square inside url("costom.svg"); /*list-style-image
 	animation: spin 1s ease-in-out infinite;
 	-webkit-animation: spin 1s ease-in-out infinite;
 }
+/* Spinner  */
+.spinner { position: relative; }
+.spinner::after {
+	content: "";
+	display: block;
+	width: 30px;
+	height: 30px;
+	border: 4px solid rgba(0,0,0,.3);
+	border-radius: 50% !important;
+	border-top-color: var(--blue-light);
+	animation: spin 1s ease-in-out infinite;
+	-webkit-animation: spin 1s ease-in-out infinite;
+}
+.spinner.spinner-sm::after { width: 20px; height: 20px; }
+.spinner.spinner-lg::after { width: 40px; height: 40px;}
+/* end Spinner */
 /* Form Ajax Loader */
 .loading { 
 	width: 26px; height: 26px; 
